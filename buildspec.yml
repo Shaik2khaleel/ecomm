@@ -14,13 +14,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:latest .
-      - docker tag $089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:latest $089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:$IMAGE_TAG
+      - docker build -t 089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:latest .
+      - docker tag 089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:latest 089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:latest
-      - docker push $089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:$IMAGE_TAG
+      - docker push 089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:latest
+      - docker push 089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"ecomm","imageUri":"%s"}]' $REPOSITORY_U
