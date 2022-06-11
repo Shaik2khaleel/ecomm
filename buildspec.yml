@@ -24,7 +24,7 @@ phases:
       - docker push 089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:latest
       - docker push 089140685165.dkr.ecr.us-east-1.amazonaws.com/mydockerrepo:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"ecomm","imageUri":"%s"}]' $REPOSITORY_U
+      - printf '[{"name":"ecomm","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       
 artifacts:
       files: imagedefinitions.json
